@@ -1,0 +1,122 @@
+
+		* {
+			font-size: 20px;
+		}
+
+		body {
+			font-family: 'Sarabun', sans-serif;
+			background: rgb(222, 235, 255);
+		}
+
+		#topic-cover {
+			width: 100%;
+			border: 8px solid #1d96cf;
+			border-radius: 10px;
+		}
+
+		.font-maitree {
+			font-family: 'Maitree', serif;			
+		}
+
+		.font-dark-red {
+			color: #820e2b;
+		}
+
+    h3 {
+      color: rgb(22, 156, 100);
+      font-weight: bolder;
+      font-size: 20px;
+    }
+    
+    #benefitsMy {
+      background: #e7e8ea;
+      padding: 5px 10px;
+      margin: 5px 0;
+      border-radius: 10px;
+      border: 5px solid grey;
+    }
+
+
+    #benefits {
+      background: #e7e8ea;
+      padding: 20px 30px;
+      margin: 20px 0;
+      border-radius: 10px;
+      border: 5px solid grey;
+    }
+
+
+    #benefits h3 {
+      color: rgb(89, 42, 191);
+      font-size: 30px;
+    }
+
+    #descImg h3 {
+      color: rgb(189, 142, 19);
+      font-size: 30px;
+    }
+
+    #benefits h3:hover {
+      color: rgb(207, 54, 19);
+      font-size: 50px;
+    }
+
+
+    #benefits p {
+      line-height: 40px;
+    }
+
+    #summary h2, #summary p {
+      font-weight: 900;
+      text-align: center;
+    }
+
+
+    #summary h2 {
+      font-size: 60px;
+    }
+
+    #summary p {
+      font-size: 30px;
+      line-height: 60px;
+    }
+
+    section#meditation {
+      padding: 20px 50px;
+      /* padding: 100px; */
+    }
+
+    section#profile {
+      padding: 40px 50px;
+    }
+
+    section#summary {
+      padding: 40px 50px;
+      background: #b9dbff;
+      color: #3f4d5c;
+      border-radius: 10px;
+      box-shadow: 5px 10px 18px #888888;
+      margin: 30px 20px 50px 20px;
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      } */
+
+      #myText {
+        color: rgb(22, 156, 100);
+        font-weight: bolder;
+        font-size: 20px;
+      }
+
+      .myCardF {
+        font-family: 'Sarabun', sans-serif;
+        background: rgb(222, 235, 255);
+      }
