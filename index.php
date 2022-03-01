@@ -25,7 +25,7 @@
         <!-- <img src="https://drive.google.com/uc?export=view&id=1uFtnbU-b4CIfFBt0Igx9i8uaTpVL207P" class="card-img-top img-thumbnail" alt="pict"> -->
 
         <?php 
-            $url_app_script = 'https://script.google.com/macros/s/AKfycbzeP5DCfDCEbJO3OxvrxR1IPRHFfFTt64sSw6ce3SXY4Qf_AA_D3u-v_Gt3EJ3p8ErU_w/exec';
+            $url_app_script = 'https://script.google.com/macros/s/AKfycbx2fkdVn8HsAPkUlmKaeg6oGs076pyqZbNnF187cu2hQuQFn_h4_zhywW2u9DIbj3NH8g/exec';
             
             $rnt_data = c_url($url_app_script, 'list');
             $rnt_data = json_decode($rnt_data, true);

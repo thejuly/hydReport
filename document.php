@@ -33,7 +33,7 @@
         </script>
         <hr style="margin: 20px;">
         <?php 
-            $url_app_script = 'https://script.google.com/macros/s/AKfycbzeP5DCfDCEbJO3OxvrxR1IPRHFfFTt64sSw6ce3SXY4Qf_AA_D3u-v_Gt3EJ3p8ErU_w/exec';
+            $url_app_script = 'https://script.google.com/macros/s/AKfycbx2fkdVn8HsAPkUlmKaeg6oGs076pyqZbNnF187cu2hQuQFn_h4_zhywW2u9DIbj3NH8g/exec';
             //echo urlencode($doc_team) . "\n";
             $doc_teamx = urlencode($doc_team);
 
@@ -55,20 +55,27 @@
                     foreach ($rnt_data as $i=>$values) {
                         // echo $values['docName'].'  a  '; echo $values['docURL'].'<br>';
                         $date_split = explode("T",$values['docDate']);
-
-                        if($values['docURL']){
-                            echo '<li class="ms-4"><a href="'. $values['docURL'].'" target="_blank"> 
-                                 <span> '. $values['docName'].'</span></a> 
-                                 &nbsp (Date: '.$date_split[0].', By: '.$values['docBy'].')</li>';
-
-                            // echo $values['docName'].'     ';echo $values['docURL'].'<br>';
-
-                        }else{
-                            // echo '<hr />';
-                            echo '<H4 class="ms-3 mt-5">'.$values['docName'].'</H4>';
-                            
+                        if(!$values['docURL']){
+                           //echo '<H4 class="ms-3 mt-5">'.$values['docName'].'</H4>';
                         }
 
+                        //echo '<ul>';
+                            if($values['docURL']){
+                                echo '<li class="ms-4"><a href="'. $values['docURL'].'" target="_blank"> 
+                                    <span> '. $values['docName'].'</span></a> 
+                                    &nbsp (Eff: '.$values['eff']. ' %, Press: '.$values['press']. ' Bar, Date: '.$date_split[0].', By: '.$values['docBy'].')</li>';
+                                echo '<br>';
+                                // echo $values['docName'].'     ';echo $values['docURL'].'<br>';
+
+                            }else{
+                                //font-size: 45px; color: #0083a1; font-family: 'Mali', cursive;
+                                // echo '<hr />';
+                                // echo 'font-size: 45px; color: #0083a1; font-family: 'Mali', cursive;'
+                                echo '<H4 class="ms-3 mt-3" style="font-size: 24px; color: #0083a1; font-family: '."'Mali'".', cursive;">'.$values['docName'].'</H4>';
+                                //echo '<br>';
+                                
+                            }
+                        //echo '</ul>';
                         
                         
 
