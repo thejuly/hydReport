@@ -34,8 +34,10 @@
         <hr style="margin: 20px;">
         <?php 
             $url_app_script = 'https://script.google.com/macros/s/AKfycbzeP5DCfDCEbJO3OxvrxR1IPRHFfFTt64sSw6ce3SXY4Qf_AA_D3u-v_Gt3EJ3p8ErU_w/exec';
-            
-            $rnt_data = c_url($url_app_script, $doc_team);
+            //echo urlencode($doc_team) . "\n";
+            $doc_teamx = urlencode($doc_team);
+
+            $rnt_data = c_url($url_app_script, $doc_teamx);
             $rnt_data = json_decode($rnt_data, true);
             // echo $rnt_data[0];print_r($rnt_data[0]);echo$rnt_data[0]['docName']
             // echo gettype($rnt_data);echo '<br>';
@@ -82,13 +84,15 @@
         <!-- <p>aa</p> -->
     </div>
 
-    <footer class="card bg-secondary text-white text-center p-3 mt-5">
-        <span>
-            Copyright © 2022
-            <a href="#" target="_blank" class="text-white"></a>
-            All Right Reserved (By: Natthaphong_2626)
-        </span>
-    </footer>
+    <section class="container mb-5">
+        <footer class="card bg-secondary text-white text-center p-3 mt-5">
+            <span>
+                Copyright © 2022
+                <a href="#" target="_blank" class="text-white"></a>
+                All Right Reserved (By: Natthaphong_2626)
+            </span>
+        </footer>
+    </section>
 
 </body>
 </html>
@@ -133,7 +137,7 @@
 
         function c_url($url_app_script, $req='DCS_PM12') {
             $url = $url_app_script.'?req='.$req;
-            // echo $url;
+            //echo $url;
     
             $curl = curl_init();
             curl_setopt($curl, CURLOPT_URL, $url);

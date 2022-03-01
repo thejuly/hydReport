@@ -100,15 +100,16 @@
 
     </div>
 
-
-    <footer class="card bg-secondary text-white text-center p-3 mt-5">
-        <span>
-            Copyright © 2022
-            <a href="#" target="_blank" class="text-white"></a>
-            All Right Reserved (By: Natthaphong_2626)
-        </span>
-    </footer>
-        
+    
+    <section class="container mb-5">
+        <footer class="card bg-secondary text-white text-center p-3 mt-5">
+            <span>
+                Copyright © 2022
+                <a href="#" target="_blank" class="text-white"></a>
+                All Right Reserved (By: Natthaphong_2626)
+            </span>
+        </footer>
+    </section>
 </body>
 </html>
 
