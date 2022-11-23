@@ -31,6 +31,23 @@
             $rnt_data = json_decode($rnt_data, true);
             // printSheet($rnt_data);
 
+
+            $url_app_script = 'https://script.google.com/macros/s/AKfycbx2fkdVn8HsAPkUlmKaeg6oGs076pyqZbNnF187cu2hQuQFn_h4_zhywW2u9DIbj3NH8g/exec';
+            //echo urlencode($doc_team) . "\n";
+            $doc_teamx = urlencode('img');
+            $rnt_datax = c_url($url_app_script, $doc_teamx);
+            $rnt_datax = json_decode($rnt_datax, true);
+            // print_r ($rnt_datax);
+
+            $img = array();
+            foreach ($rnt_datax as $i=>$valuesx) { 
+                // echo $valuesx['docURL']."<br>";
+                // print_r($valuesx); echo "<br>";
+                array_push($img,$valuesx['docURL']);
+
+            }
+            //print_r ($img);
+
         ?>
 
         <!-- <section class="container mb-5">
@@ -54,20 +71,23 @@
                 <?php
                     foreach ($rnt_data as $i=>$values) {
                         foreach ($values as $value) {
-                            
-                            // https://drive.google.com/uc?export=view&id=1uFtnbU-b4CIfFBt0Igx9i8uaTpVL207P
-                            echo '<div class="col-md-6 col-lg-4">';
-                                // echo '<img src="img/'.$value.'.png" class="card-img-top img-thumbnail" alt="pict">';
-                                echo '<img src="https://drive.google.com/uc?export=view&id='.'1HiAUpUfZ4UoAKPlafpZpTlbxKQXDRSOG'.'" class="card-img-top img-thumbnail" alt="pict">';
-                                echo '<div class="card-body">';
-                                    echo '<h5 class="card-tigle">'.$value.'</h5>';
-                                    echo '<p class="card-text">Service report: '.$value.'</p>';
+                            // echo $value;
+                            if($value <> "img"){
+                                // https://drive.google.com/uc?export=view&id=1uFtnbU-b4CIfFBt0Igx9i8uaTpVL207P
+                                echo '<div class="col-md-6 col-lg-4">';
+                                    // echo '<img src="img/'.$value.'.png" class="card-img-top img-thumbnail" alt="pict">';
+                                   //echo '<img src="https://drive.google.com/uc?export=view&id='.'1HiAUpUfZ4UoAKPlafpZpTlbxKQXDRSOG'.'" class="card-img-top img-thumbnail" alt="pict">';
+                                   echo '<img src="https://drive.google.com/uc?export=view&id='.$img[$i].'" class="card-img-top img-thumbnail" alt="pict">';
+                                    echo '<div class="card-body">';
+                                        echo '<h5 class="card-tigle">'.$value.'</h5>';
+                                        echo '<p class="card-text">Service report: '.$value.'</p>';
+                                    echo '</div>';
+                                    echo '<div class="card-footer myCardF bolder-0">';
+                                        // echo '<a href="document.php?doc_team='.$value.'" class="btn btn-primary d-block">ดูเพิ่มเติม</a>' ;
+                                        echo '<a href="document.php?doc_team='.$value.'" class="btn btn-outline-success btn-sm d-block">ดูเพิ่มเติม</a>' ;
+                                    echo '</div>';
                                 echo '</div>';
-                                echo '<div class="card-footer myCardF bolder-0">';
-                                    // echo '<a href="document.php?doc_team='.$value.'" class="btn btn-primary d-block">ดูเพิ่มเติม</a>' ;
-                                    echo '<a href="document.php?doc_team='.$value.'" class="btn btn-outline-success btn-sm d-block">ดูเพิ่มเติม</a>' ;
-                                echo '</div>';
-                            echo '</div>';
+                            }
                         }
                     }
                 ?>
@@ -81,6 +101,7 @@
                 <th>Document</th>
             </tr>
                 <?php
+                
                     foreach ($rnt_data as $i=>$values) {
                         echo '<form action="/efficiency/document.php" method="post">';
                         echo "<tr>";
